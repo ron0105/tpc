@@ -4,13 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products & Supply Solutions | TPC Pharma & Chemicals - Mumbai, India</title>
+    <title>Products & Formulations | TPC Global Pharma & Chemicals</title>
     <meta name="description"
-        content="Explore our range of Pharmaceutical APIs, Chemical Intermediates, and Bulk Chemicals. We offer Custom and Tender-Based Sourcing for institutions.">
+        content="Explore WHO-GMP compliant tablet formulations and high-purity APIs from TPC Global Pharma — Metronidazole, Ciprofloxacin, Ibuprofen, Amoxicillin & Clavulanate.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ─── Tab System ─────────────────────────────── */
+        .tabs-nav {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--color-gray-200);
+            margin-bottom: var(--space-12);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: var(--space-3) var(--space-8);
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            font-family: var(--font-primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-gray-600);
+            cursor: pointer;
+            transition: color var(--transition-fast), border-color var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--color-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* ─── Product Card Extras ────────────────────── */
+        .product-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: var(--space-1);
+            display: block;
+        }
+
+        .product-type-label {
+            font-size: 0.8rem;
+            color: var(--color-gray-600);
+            font-style: italic;
+            margin-bottom: var(--space-4);
+            display: block;
+        }
+
+        .strengths {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+        }
+
+        .strength-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: var(--color-gray-100);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        /* ─── Section Intro Block ────────────────────── */
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-gray-600);
+            margin-bottom: var(--space-2);
+        }
+
+        /* ─── Scroll-Reveal Fade ─────────────────────── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+    </style>
 </head>
 
 <body>
@@ -19,7 +127,7 @@
     <header class="site-header">
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html" style="color: var(--color-primary);">TPC Pharma & Chemicals</a>
+                <a href="index.html" style="color: var(--color-primary);">TPC Pharma &amp; Chemicals</a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle navigation">
                 ☰
@@ -29,7 +137,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="quality.html">Quality & Compliance</a></li>
+                    <li><a href="quality.html">Quality &amp; Compliance</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -43,122 +151,189 @@
             style="position: absolute; top: -50%; right: -10%; width: 60%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);">
         </div>
         <div class="container" style="position: relative; z-index: 1;">
-            <h1 style="margin-bottom: var(--space-2);">Products & Supply Solutions</h1>
-            <p style="font-size: 1.25rem; max-width: 700px; margin: 0;">Verified sourcing capabilities across key
-                pharmaceutical and chemical verticals.</p>
+            <p class="section-label" style="color: rgba(255,255,255,0.6);">OUR PORTFOLIO</p>
+            <h1 style="margin-bottom: var(--space-2);">Products &amp; Formulations</h1>
+            <p style="font-size: 1.25rem; max-width: 700px; margin: 0;">
+                Contract manufacturing of finished dosage forms and direct supply of high-purity APIs — manufactured under strict quality protocols.
+            </p>
         </div>
     </section>
 
-    <!-- Introduction -->
-    <section class="section-light" style="padding-bottom: var(--space-8);">
+    <!-- Product Portfolio with Tabs -->
+    <section class="section-light">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-gray-800);">
-                    We do not merely supply products; we orchestrate secure, fully-documented supply chains. Our
-                    portfolio encompasses high-grade pharmaceutical active ingredients and industrial-scale bulk
-                    chemicals, sourced exclusively from vetted, compliant manufacturing partners.
-                </p>
+
+            <!-- Tab Navigation -->
+            <div class="tabs-nav" role="tablist" aria-label="Product categories">
+                <button
+                    class="tab-btn active"
+                    id="tab-tablets"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panel-tablets"
+                    onclick="switchTab('tablets', this)">
+                    Tablet Formulations
+                </button>
+                <button
+                    class="tab-btn"
+                    id="tab-apis"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-apis"
+                    onclick="switchTab('apis', this)">
+                    Active Pharmaceutical Ingredients
+                </button>
             </div>
-        </div>
-    </section>
 
-    <!-- Pharmaceutical APIs -->
-    <section class="section-light" style="padding-top: var(--space-4);">
-        <div class="container">
-            <div
-                style="border-left: 4px solid var(--color-primary); padding-left: var(--space-6); margin-bottom: var(--space-12);">
-                <h2 style="margin-bottom: var(--space-4);">Pharmaceutical APIs</h2>
-                <p style="max-width: 800px; font-size: 1.1rem;">
-                    Our core strength lies in securing Active Pharmaceutical Ingredients that meet international
-                    pharmacopeial standards (USP, EP, BP, IP). We serve formulation facilities and institutional buyers
-                    demanding absolute consistency.
-                </p>
-                <div
-                    style="margin-top: var(--space-6); background-color: var(--color-gray-50); padding: var(--space-6); border-radius: var(--border-radius-sm); border: 1px solid var(--color-gray-200);">
-                    <h4 style="margin-bottom: var(--space-4); color: var(--color-gray-800);">Sourcing Parameters:</h4>
-                    <ul
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); list-style: none; color: var(--color-gray-700);">
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> GMP Certified Facilities Only</li>
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> Full DMF/CEP Documentation available</li>
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> Strict Impurity Profiling</li>
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> End-to-end Traceability</li>
+            <!-- ── TABLET FORMULATIONS PANEL ── -->
+            <div id="panel-tablets" class="tab-panel active" role="tabpanel" aria-labelledby="tab-tablets">
+
+                <div class="card-grid products-grid">
+
+                    <!-- Metronidazole -->
+                    <div class="card product-card fade-up delay-1">
+                        <div class="card-icon">💊</div>
+                        <span class="product-category">Antiprotozoal / Antibiotic</span>
+                        <h3 style="margin-bottom: var(--space-1);">Metronidazole</h3>
+                        <span class="product-type-label">Uncoated Tablet</span>
+                        <p>Broad-spectrum antibiotic and antiprotozoal agent used for treatment of anaerobic infections, amoebiasis, and giardiasis.</p>
+                        <div class="strengths">
+                            <span class="strength-badge">250 mg</span>
+                            <span class="strength-badge">400 mg</span>
+                            <span class="strength-badge">500 mg</span>
+                        </div>
+                    </div>
+
+                    <!-- Ciprofloxacin -->
+                    <div class="card product-card fade-up delay-2">
+                        <div class="card-icon">💊</div>
+                        <span class="product-category">Fluoroquinolone Antibiotic</span>
+                        <h3 style="margin-bottom: var(--space-1);">Ciprofloxacin</h3>
+                        <span class="product-type-label">Film-Coated Tablet</span>
+                        <p>Broad-spectrum fluoroquinolone antibiotic effective against gram-positive and gram-negative bacteria; used for UTI, respiratory, and skin infections.</p>
+                        <div class="strengths">
+                            <span class="strength-badge">500 mg</span>
+                        </div>
+                    </div>
+
+                    <!-- Ibuprofen -->
+                    <div class="card product-card fade-up delay-3">
+                        <div class="card-icon">💊</div>
+                        <span class="product-category">NSAID / Analgesic</span>
+                        <h3 style="margin-bottom: var(--space-1);">Ibuprofen</h3>
+                        <span class="product-type-label">Coated Tablet</span>
+                        <p>Non-steroidal anti-inflammatory drug (NSAID) used for pain relief, fever reduction, and treatment of inflammatory conditions.</p>
+                        <div class="strengths">
+                            <span class="strength-badge">200 mg</span>
+                            <span class="strength-badge">400 mg</span>
+                        </div>
+                    </div>
+
+                    <!-- Amoxicillin + Clavulanate -->
+                    <div class="card product-card fade-up delay-4">
+                        <div class="card-icon">💊</div>
+                        <span class="product-category">Penicillin + β-Lactamase Inhibitor</span>
+                        <h3 style="margin-bottom: var(--space-1);">Amoxicillin &amp; Potassium Clavulanate</h3>
+                        <span class="product-type-label">Combination Tablet</span>
+                        <p>Fixed-dose combination antibiotic for respiratory, urinary tract, and skin infections resistant to amoxicillin alone.</p>
+                        <div class="strengths">
+                            <span class="strength-badge">375 mg</span>
+                            <span class="strength-badge">625 mg</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Quality Note -->
+                <div style="margin-top: var(--space-12); background-color: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: var(--border-radius-md); padding: var(--space-8);">
+                    <h4 style="margin-bottom: var(--space-4);">Manufacturing Standards</h4>
+                    <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); list-style: none; color: var(--color-gray-700);">
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> WHO-GMP Certified Facilities</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> Full COA provided with every batch</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> In-process &amp; finished goods QC</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> Formulation, compression &amp; coating</li>
                     </ul>
                 </div>
+
             </div>
 
-            <!-- Chemical Intermediates -->
-            <div
-                style="border-left: 4px solid var(--color-accent); padding-left: var(--space-6); margin-bottom: var(--space-12);">
-                <h2 style="margin-bottom: var(--space-4);">Chemical Intermediates</h2>
-                <p style="max-width: 800px; font-size: 1.1rem;">
-                    For synthesis and large-scale manufacturing operations, we provide highly purified chemical
-                    intermediates. We manage the complexity of logistics and specialized storage requirements to ensure
-                    stability upon delivery.
-                </p>
-            </div>
+            <!-- ── API PRODUCTS PANEL ── -->
+            <div id="panel-apis" class="tab-panel" role="tabpanel" aria-labelledby="tab-apis">
 
-            <!-- Bulk Chemicals -->
-            <div
-                style="border-left: 4px solid var(--color-primary-dark); padding-left: var(--space-6); margin-bottom: var(--space-12);">
-                <h2 style="margin-bottom: var(--space-4);">Bulk Chemicals</h2>
-                <p style="max-width: 800px; font-size: 1.1rem;">
-                    Enabling institutional-scale industrial operations through reliable bulk chemical procurement. Our
-                    robust logistics network ensures safe, timely, and compliant transport of hazardous and
-                    non-hazardous bulk materials.
-                </p>
-                <div
-                    style="margin-top: var(--space-6); background-color: var(--color-gray-50); padding: var(--space-6); border-radius: var(--border-radius-sm); border: 1px solid var(--color-gray-200);">
-                    <ul
-                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); list-style: none; color: var(--color-gray-700);">
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> Industrial grade purity</li>
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> Tonnage-level supply capacities</li>
-                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span
-                                style="color: var(--color-primary);">▪</span> Specialized Transport Coordination</li>
+                <div class="card-grid api-grid">
+
+                    <!-- Metronidazole API -->
+                    <div class="card api-card fade-up delay-1">
+                        <div class="card-icon">⚗️</div>
+                        <span class="product-category">Active Ingredient</span>
+                        <h3>Metronidazole API</h3>
+                        <p>High-purity pharmaceutical-grade active ingredient for large-scale antiprotozoal and antibiotic formulation manufacturing. Full DMF &amp; COA documentation available.</p>
+                    </div>
+
+                    <!-- Ciprofloxacin API -->
+                    <div class="card api-card fade-up delay-2">
+                        <div class="card-icon">⚗️</div>
+                        <span class="product-category">Active Ingredient</span>
+                        <h3>Ciprofloxacin API</h3>
+                        <p>Pharmaceutical-grade fluoroquinolone API compliant with USP, EP, BP, and IP pharmacopeial standards. Supplied with full regulatory documentation support.</p>
+                    </div>
+
+                    <!-- Ibuprofen API -->
+                    <div class="card api-card fade-up delay-3">
+                        <div class="card-icon">⚗️</div>
+                        <span class="product-category">Active Ingredient</span>
+                        <h3>Ibuprofen API</h3>
+                        <p>High-grade NSAID bulk API with bulk supply capability and strict impurity profiling. Certificate of Analysis and MSDS provided with every shipment.</p>
+                    </div>
+
+                    <!-- Amoxicillin API -->
+                    <div class="card api-card fade-up delay-4">
+                        <div class="card-icon">⚗️</div>
+                        <span class="product-category">Active Ingredient</span>
+                        <h3>Amoxicillin API</h3>
+                        <p>Regulatory-compliant penicillin-class API for domestic and export formulation partners. Sourced from GMP-certified manufacturers with end-to-end traceability.</p>
+                    </div>
+
+                </div>
+
+                <!-- Sourcing Parameters -->
+                <div style="margin-top: var(--space-12); background-color: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: var(--border-radius-md); padding: var(--space-8);">
+                    <h4 style="margin-bottom: var(--space-4);">API Sourcing Parameters</h4>
+                    <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4); list-style: none; color: var(--color-gray-700);">
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> GMP Certified Facilities Only</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> Full DMF / CEP Documentation</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> Strict Impurity Profiling</li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);"><span style="color: var(--color-primary);">▪</span> End-to-end Traceability</li>
                     </ul>
                 </div>
+
             </div>
+
         </div>
     </section>
 
-    <!-- Custom & Tender-Based Sourcing -->
+    <!-- Submit Sourcing Requirement CTA -->
     <section style="background-color: var(--color-primary); color: var(--color-white); padding: var(--space-16) 0;">
         <div class="container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="color: var(--color-white); margin-bottom: var(--space-4);">Custom & Tender-Based Sourcing
-                </h2>
+                <h2 style="color: var(--color-white); margin-bottom: var(--space-4);">Custom &amp; Tender-Based Sourcing</h2>
                 <p style="color: var(--color-gray-200); font-size: 1.1rem; margin-bottom: var(--space-8);">
-                    A significant portion of our operations is dedicated to fulfilling government and institutional
-                    tender requirements. We act as a silent, rigorous, and completely compliant execution partner for
-                    complex procurement mandates.
+                    A significant portion of our operations is dedicated to fulfilling government and institutional tender requirements. We act as a silent, rigorous, and completely compliant execution partner for complex procurement mandates.
                 </p>
 
-                <div
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); text-align: left; margin-bottom: var(--space-8);">
-                    <div
-                        style="background-color: rgba(255,255,255,0.1); padding: var(--space-6); border-radius: var(--border-radius-sm);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); text-align: left; margin-bottom: var(--space-8);">
+                    <div style="background-color: rgba(255,255,255,0.1); padding: var(--space-6); border-radius: var(--border-radius-sm);">
                         <h4 style="color: var(--color-white); margin-bottom: var(--space-2);">Contract Fulfillment</h4>
-                        <p style="color: var(--color-gray-300); margin: 0; font-size: 0.95rem;">Dedicated project
-                            management for long-term supply contracts ensuring price stability and volume guarantees.
-                        </p>
+                        <p style="color: var(--color-gray-300); margin: 0; font-size: 0.95rem;">Dedicated project management for long-term supply contracts ensuring price stability and volume guarantees.</p>
                     </div>
-                    <div
-                        style="background-color: rgba(255,255,255,0.1); padding: var(--space-6); border-radius: var(--border-radius-sm);">
-                        <h4 style="color: var(--color-white); margin-bottom: var(--space-2);">Documentation Preparation
-                        </h4>
-                        <p style="color: var(--color-gray-300); margin: 0; font-size: 0.95rem;">Rapid assembly of
-                            meticulous compliance dossiers required for tender submissions and public procurement.</p>
+                    <div style="background-color: rgba(255,255,255,0.1); padding: var(--space-6); border-radius: var(--border-radius-sm);">
+                        <h4 style="color: var(--color-white); margin-bottom: var(--space-2);">Documentation Preparation</h4>
+                        <p style="color: var(--color-gray-300); margin: 0; font-size: 0.95rem;">Rapid assembly of meticulous compliance dossiers required for tender submissions and public procurement.</p>
                     </div>
                 </div>
 
                 <a href="contact.html" class="btn btn-outline"
-                    style="border-color: var(--color-white); color: var(--color-white);">Submit a Sourcing
-                    Requirement</a>
+                    style="border-color: var(--color-white); color: var(--color-white);">Submit a Sourcing Requirement</a>
             </div>
         </div>
     </section>
@@ -168,9 +343,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4
-                        style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: var(--space-4);">
-                        TPC Pharma & Chemicals</h4>
+                    <h4 style="font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: var(--space-4);">
+                        TPC Pharma &amp; Chemicals</h4>
                     <p style="max-width: 300px;">A Mumbai-based pharmaceutical API and chemical trading company
                         dedicated to compliant, timely, and reliable supply solutions.</p>
                 </div>
@@ -178,7 +352,7 @@
                     <h4>Sourcing Solutions</h4>
                     <ul class="footer-links">
                         <li><a href="products.html">Pharmaceutical APIs</a></li>
-                        <li><a href="products.html">Chemical Intermediates</a></li>
+                        <li><a href="products.html">Tablet Formulations</a></li>
                         <li><a href="products.html">Bulk Chemicals</a></li>
                         <li><a href="products.html">Tender-Based Sourcing</a></li>
                     </ul>
@@ -187,7 +361,7 @@
                     <h4>Company</h4>
                     <ul class="footer-links">
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="quality.html">Quality & Compliance</a></li>
+                        <li><a href="quality.html">Quality &amp; Compliance</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -195,20 +369,54 @@
                     <h4>Contact Information</h4>
                     <ul class="footer-links">
                         <li style="margin-bottom: var(--space-2);">Mumbai, Maharashtra, India</li>
-                        <li style="margin-bottom: var(--space-2);">Sales.tpcglobal@gmail.com</li>
-                        <li style="margin-bottom: var(--space-2);">+91 70394 96835 <br> +91 91675 87528</li>
+                        <li style="margin-bottom: var(--space-2);">tpcglobalpharmachem@gmail.com</li>
+                        <li style="margin-bottom: var(--space-2);">+91 91675 87528<br>+91 93762 79999</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p style="margin: 0;">&copy;
-                    <script>document.write(new Date().getFullYear())</script> TPC Pharma & Chemicals. All rights
+                    <script>document.write(new Date().getFullYear())</script> TPC Pharma &amp; Chemicals. All rights
                     reserved.
                 </p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Tab switching
+        function switchTab(tabId, btn) {
+            // Deactivate all
+            document.querySelectorAll('.tab-panel').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(function(b) {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
+            // Activate selected
+            document.getElementById('panel-' + tabId).classList.add('active');
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            // Re-trigger fade animations for cards in the new panel
+            triggerFade();
+        }
+
+        // Intersection Observer for scroll-reveal
+        function triggerFade() {
+            var elements = document.querySelectorAll('.tab-panel.active .fade-up');
+            elements.forEach(function(el) {
+                // Reset then re-observe
+                el.classList.remove('visible');
+                setTimeout(function() { el.classList.add('visible'); }, 50);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial fade-in for visible panel
+            triggerFade();
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 
